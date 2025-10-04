@@ -13,7 +13,13 @@ docker run -d --name <nombre contenedor> -p <puerto host>:<puerto contenedor> <n
 Crear un contenedor a partir de la imagen nginx version alpine con el mapeo de puertos del ejemplo gráfico, host 3000 y contenedor 80
 # COMPLETAR
 
+```
+docker run -d --name srv-web4 -p 3000:80 nginx:alpine
+```
+
 # COLOCAR UNA CAPTURA DE PANTALLA  DEL ACCESO http://localhost:3000
+
+<img width="954" height="528" alt="image" src="https://github.com/user-attachments/assets/5cf3a0aa-e6e4-483b-b49c-6da2bfe2d98c" />
 
 ### Para mapear más de un puerto
 
@@ -23,6 +29,10 @@ docker run -d --name <nombre contenedor> -p <puerto host 01>:<puerto contenedor 
 
 Crear un contenedor a partir de la imagen rabbitmq version management-alpine, para este mapeo de puertos usar en el host los mismos puertos del contenedor.
 # COMPLETAR
+
+```
+docker run -d --name rabbitmq-web -p 15672:15672 rabbitmq:3-management 
+```
 
 ### Usando una forma más semántica cuando se especifican puertos
 
@@ -42,7 +52,13 @@ No puedes mapear puertos a un contenedor existente directamente después de su c
 ### Crear contenedor de Jenkins puertos contenedor: 8080 (interface web) y 50000 (comunicación entre nodos) imagen: jenkins/jenkins:alpine3.18-jdk11
 # COMPLETAR
 
+```
+docker run -d --name Jenkins-web -p 8080:8080 -p 50000:50000 jenkins/jenkins:alpine3.18-jdk11
+```
+
 # COLOCAR UNA CAPTURA DE PANTALLA  DEL ACCESO http://localhost:8080
+
+<img width="909" height="1118" alt="image" src="https://github.com/user-attachments/assets/506c938a-03f3-4f3e-8486-406f6a0af8f0" />
 
 ### ¿Cómo obtener la contraseña solicitada?
 Para obtener la contraseña solicitada es necesario ingresar al contenedor.
